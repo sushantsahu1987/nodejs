@@ -1,0 +1,16 @@
+{
+  "name": "crypto-gen-ppk",
+  "version": "1.0.0",
+  "description": "Using node crypto module to generate public private key",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "security",
+    "crypto"
+  ],
+  "author": "ssahu",
+  "license": "ISC"
+}

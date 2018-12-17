@@ -1,0 +1,23 @@
+{
+  "name": "router-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial using express router",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoose",
+    "expressjs"
+  ],
+  "author": "ssahu",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "jsonwebtoken": "^8.3.0",
+    "moment": "^2.22.2",
+    "uuid": "^3.3.2"
+  }
+}

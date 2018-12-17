@@ -1,0 +1,20 @@
+{
+  "name": "faker-latlong-gen",
+  "version": "1.0.0",
+  "description": "User faker.js to generate lat/long values",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "faker.js",
+    "nodejs",
+    "lodash"
+  ],
+  "author": "ssahu",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^4.1.0",
+    "lodash": "^4.17.11"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "users": [
+    {
+      "name": "test@test.com",
+      "password": "test123",
+      "secret": "KI6EMTLUENYHKVRRPF3G67L3LMZGIXKAON5VQQZ6JVAVO5ZBINDQ"
+    }
+  ]
+}
