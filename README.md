@@ -48,59 +48,6 @@ Learning nodejs the cool way !
     Generate pub & key.pem certificates on the fly using crypto or ursa :
     1. https://stackoverflow.com/questions/8520973/how-to-create-a-pair-private-public-keys-using-node-js-crypto
     
-    How to make http calls over graphql server:
-    1. Get Request:
-        http://localhost:3000/graphql?query={user(id:%2223%22){name}}
-        
-    2. Post Request:
-        http://localhost:3000/graphql
-        { "query": "mutation  ($id: String!, $name: String!) { addUser(id: $id, name: $name) { id, name } } ", 
-        "variables": { "id": "1", "name":"sushant" } }
-
-    
-    GraphQL 
-    1. Format:
-        query [name]{
-            [user](id:1) {
-                attr1,
-                attr2,
-            }
-        }
-        
-    2. Multiple Query:
-        {
-            result1: [user](id:1) {
-                attr1,
-                attr2,
-            }
-            result1: [user](id:1) {
-                attr1,
-                attr2,
-            }
-        }
-        
-    3. Query Fragment:
-        {
-            result1: [user](id:1) {
-                ...fragment_name
-            }
-            result1: [user](id:1) {
-                ...fragment_name
-            }
-        }
-        
-        fragment [fragment_name] on [Model] {
-            attr1,
-            attr2,
-        }
-        
-    4. Mutation:
-        mutation {
-            [fn-name](args) {
-                id,
-                name
-            }
-        }        
 
 ### Help
 
@@ -128,12 +75,4 @@ Learning nodejs the cool way !
     5. Generate RSA Keys from command
     https://rietta.com/blog/2012/01/27/openssl-generating-rsa-key-from-command/
     https://github.com/ivan0124/Linux-programming/wiki/How-to-generate-RSA-public-and-private-keys(PEM-format)-with-openssl-%3F
-    
-    6. Redis
-    https://redislabs.com/
-    https://www.npmjs.com/package/redis
-    
-    7. Lowdb
-    https://www.npmjs.com/package/lowdb
-    
     
