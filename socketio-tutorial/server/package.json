@@ -1,0 +1,19 @@
+{
+  "name": "socketio-tutorial",
+  "version": "1.0.0",
+  "description": "A tutorial into socket io.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "socket.io",
+    "nodejs",
+    "expressjs"
+  ],
+  "author": "ssahu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
