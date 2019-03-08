@@ -1,0 +1,9 @@
+{
+    "apps": [
+        {
+            "name": "test-nodejs-pm2",
+            "script": "npm",
+            "args" : "start"
+        }
+    ]
+}
