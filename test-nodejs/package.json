@@ -1,0 +1,18 @@
+{
+  "name": "demo-nodejs",
+  "version": "1.0.0",
+  "description": "A demo nodejs application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [
+    "expressjs",
+    "nodejs"
+  ],
+  "author": "ssahu",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
