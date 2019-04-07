@@ -1,0 +1,24 @@
+{
+  "name": "nodejs-scraping-basic",
+  "version": "1.0.0",
+  "description": "scrapping using simple http, request, cheerio",
+  "main": "index.js",
+  "scripts": {
+    "dev": "./node_modules/nodemon/bin/nodemon.js ."
+  },
+  "keywords": [
+    "nodejs",
+    "request-promise",
+    "cheerio"
+  ],
+  "author": "ssahu",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
