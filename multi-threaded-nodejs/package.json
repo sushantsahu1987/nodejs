@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node .",
-    "clear": "rm ./images/*"
+    "ms": "node multicpu.js",
+    "ss": "node singlecpu.js",
+    "cls": "rm ./images/*"
   },
   "keywords": [],
   "author": "Sushant Sahu <sushant87@gmail.com>",
@@ -13,6 +14,7 @@
   "dependencies": {
     "faker": "^5.4.0",
     "lodash": "^4.17.21",
+    "moment": "^2.29.1",
     "node-fetch": "^2.6.1",
     "nodemon": "^2.0.7"
   }
