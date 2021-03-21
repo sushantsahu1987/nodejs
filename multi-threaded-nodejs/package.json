@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "ms": "node multicpu.js",
-    "ss": "node singlecpu.js",
-    "cls": "rm ./images/*"
+    "ms": "rm -f ./images/* && node multicpu.js",
+    "ss": "rm -f ./images/* && node singlecpu.js",
+    "cls": "rm -f ./images/*"
   },
   "keywords": [],
   "author": "Sushant Sahu <sushant87@gmail.com>",

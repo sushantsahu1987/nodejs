@@ -8,7 +8,7 @@ const moment = require("moment");
 
 const { writeToFile } = require("./utils");
 
-const CPU = 2;
+const CPU = 5;
 const DIR_IMAGES = "./images";
 const FILE_MULTIPLE = "multiple.txt";
 
