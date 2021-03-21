@@ -1,0 +1,19 @@
+{
+  "name": "multi-threaded-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node .",
+    "clear": "rm ./images/*"
+  },
+  "keywords": [],
+  "author": "Sushant Sahu <sushant87@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "faker": "^5.4.0",
+    "lodash": "^4.17.21",
+    "node-fetch": "^2.6.1",
+    "nodemon": "^2.0.7"
+  }
+}
