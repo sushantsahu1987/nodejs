@@ -1,0 +1,1 @@
+seq 10 | xargs -I -- <command>
