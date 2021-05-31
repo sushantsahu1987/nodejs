@@ -1,0 +1,15 @@
+{
+  "name": "hello-world",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "keywords": [],
+  "author": "Sushant Sahu <sushant87@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

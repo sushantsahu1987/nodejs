@@ -16,11 +16,14 @@ const FILE_MULTIPLE = "multiple.txt";
 const workers = {};
 const args = process.argv;
 const N = args.length < 3 ? 2 : Number(args[2]);
+const deltatimeaggregator = {};
 let liveWorkers = 0;
 
 const COMMAND = {
   SHUTDOWN: "SHUTDOWN",
   PROCESS: "PROCESS",
+  DOWNLOAD_START: "DOWNLOAD_START",
+  DOWNLOAD_STOP: "DOWNLOAD_STOP",
   PROCESS_COMPLETE: "PROCESS_COMPLETE",
 };
 
@@ -29,18 +32,35 @@ const download = (img) => {
 };
 
 const workerMessagerHandler = (msg) => {
-  console.log(
-    `command process ${process.pid} starts at ${new Date().toISOString()}`
-  );
   switch (msg.command) {
     case COMMAND.PROCESS:
       if (msg.pid === process.pid) {
-        console.log(`command process ${process.pid} starts ...`);
+        console.log(
+          `command process ${
+            process.pid
+          } download starts at ${new Date().toISOString()}`
+        );
         const { images } = msg;
         const images_array_promises = _.map(images, (img) => download(img));
         (async () => {
+          const t1 = moment();
+          process.send({
+            command: COMMAND.DOWNLOAD_START,
+            worker: process.pid,
+            time: t1,
+          });
           const result = await dowloadImages(images_array_promises);
-          console.log(`process ${process.pid} download complete ...`, result);
+          const t2 = moment();
+          console.log(
+            `command process ${
+              process.pid
+            } download completes in ${calculate_time(t1)}`
+          );
+          process.send({
+            command: COMMAND.DOWNLOAD_STOP,
+            worker: process.pid,
+            time: t2,
+          });
           process.send({
             command: COMMAND.PROCESS_COMPLETE,
             worker: process.pid,
@@ -55,15 +75,22 @@ const workerMessagerHandler = (msg) => {
   }
 };
 
-
 const masterhandler = (now) => {
   const masterMessagerHandler = (msg) => {
     switch (msg.command) {
+      case COMMAND.DOWNLOAD_START:
+        console.log(`download start ${msg}`);
+        break;
+
+      case COMMAND.DOWNLOAD_STOP:
+        console.log(`download stop ${msg}`);
+        break;
+
       case COMMAND.SHUTDOWN:
         console.log(`shutting down worker : `, msg.worker);
         workers[msg.worker].w.disconnect();
         break;
-  
+
       case COMMAND.PROCESS_COMPLETE:
         console.log(`process complete : `, msg.worker);
         liveWorkers--;
@@ -79,22 +106,22 @@ const masterhandler = (now) => {
           console.log("diff_time :", diff_time);
         }
         break;
-  
+
       default:
         break;
     }
   };
 
-  return masterMessagerHandler
-}
+  return masterMessagerHandler;
+};
 
 const sendMessage = (worker) => {
-  const {w, images} = worker;
+  const { w, images } = worker;
   const data = {
     command: COMMAND.PROCESS,
     images,
     pid: w.process.pid,
-  }
+  };
   w.send(data);
 };
 
@@ -122,5 +149,3 @@ if (cluster.isMaster) {
   console.log(`worker: ${process.pid}`);
   process.on("message", workerMessagerHandler);
 }
-
-

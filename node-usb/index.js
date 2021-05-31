@@ -13,7 +13,7 @@ devices.forEach((device, index) => {
           device.getStringDescriptor(
             device.deviceDescriptor.iSerialNumber,
             function (err, serialNumber) {
-              console.log(manufacturer, product, serialNumber);
+              console.log({ manufacturer, product, serialNumber });
               device.close();
             }
           );
